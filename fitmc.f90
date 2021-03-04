@@ -1,3 +1,18 @@
+function boxmuller(n, m)
+  real(4) :: n, m
+  real(4) :: boxmuller
+  real(4) :: pi = 3.14159265359
+
+  boxmuller = sqrt(-2.0*log(n)) * cos(2.0*pi*m)
+end function boxmuller
+
+function normrand(mu, sigma)
+  real(rk) :: mu, sigma
+  real(rk) :: normrand
+
+  normrand = boxmuller(rand(), rand()) * sigma + mu
+end function normrand
+
 ! Monte Carlo fit
 subroutine fitlinemc(xdata, ydata, n, sigma, a, b, sa, sb, ag, bg)
   real(rk), allocatable :: xdata(:)
