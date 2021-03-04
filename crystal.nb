@@ -1,358 +1,48 @@
-(* Content-type: application/vnd.wolfram.mathematica *)
-
-(*** Wolfram Notebook File ***)
-(* http://www.wolfram.com/nb *)
-
-(* CreatedBy='Mathematica 12.0' *)
-
-(*CacheID: 234*)
-(* Internal cache information:
-NotebookFileLineBreakTest
-NotebookFileLineBreakTest
-NotebookDataPosition[       158,          7]
-NotebookDataLength[     11645,        350]
-NotebookOptionsPosition[     11354,        337]
-NotebookOutlinePosition[     11690,        352]
-CellTagsIndexPosition[     11647,        349]
-WindowFrame->Normal*)
-
-(* Beginning of Notebook Content *)
-Notebook[{
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"r", "=", "0.3"}], ";"}], "\n", 
- RowBox[{
-  RowBox[{"n", "=", "3"}], ";", 
-  RowBox[{"m", "=", "3"}], ";", 
-  RowBox[{"l", "=", "3"}], ";"}], "\n", 
- RowBox[{
-  RowBox[{"lattice", "=", 
-   RowBox[{"Table", "[", 
-    RowBox[{
-     RowBox[{"Table", "[", 
-      RowBox[{
-       RowBox[{"Table", "[", 
-        RowBox[{
-         RowBox[{"Sphere", "[", 
-          RowBox[{
-           RowBox[{"{", 
-            RowBox[{"i", ",", "j", ",", "k"}], "}"}], ",", "r"}], "]"}], ",", 
-         
-         RowBox[{"{", 
-          RowBox[{"i", ",", "0", ",", "n"}], "}"}]}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"j", ",", "0", ",", "m"}], "}"}]}], "]"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"k", ",", "0", ",", "l"}], "}"}]}], "]"}]}], ";"}], "\n", 
- RowBox[{
-  RowBox[{"body", "=", 
-   RowBox[{"Table", "[", 
-    RowBox[{
-     RowBox[{"Table", "[", 
-      RowBox[{
-       RowBox[{"Table", "[", 
-        RowBox[{
-         RowBox[{"Sphere", "[", 
-          RowBox[{
-           RowBox[{"{", 
-            RowBox[{
-             RowBox[{"i", "+", "0.5"}], ",", 
-             RowBox[{"j", "+", "0.5"}], ",", 
-             RowBox[{"k", "+", "0.5"}]}], "}"}], ",", "r"}], "]"}], ",", 
-         RowBox[{"{", 
-          RowBox[{"i", ",", "0", ",", 
-           RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"j", ",", "0", ",", 
-         RowBox[{"m", "-", "1"}]}], "}"}]}], "]"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"k", ",", "0", ",", 
-       RowBox[{"l", "-", "1"}]}], "}"}]}], "]"}]}], ";"}], "\n", 
- RowBox[{
-  RowBox[{"face", "=", 
-   RowBox[{"Join", "[", 
-    RowBox[{
-     RowBox[{"Table", "[", 
-      RowBox[{
-       RowBox[{"Table", "[", 
-        RowBox[{
-         RowBox[{"Table", "[", 
-          RowBox[{
-           RowBox[{"Sphere", "[", 
-            RowBox[{
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"i", "+", "0.5"}], ",", 
-               RowBox[{"j", "+", "0.5"}], ",", "k"}], "}"}], ",", "r"}], 
-            "]"}], ",", 
-           RowBox[{"{", 
-            RowBox[{"i", ",", "0", ",", 
-             RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}], ",", 
-         RowBox[{"{", 
-          RowBox[{"j", ",", "0", ",", 
-           RowBox[{"m", "-", "1"}]}], "}"}]}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"k", ",", "0", ",", "l"}], "}"}]}], "]"}], ",", 
-     RowBox[{"Table", "[", 
-      RowBox[{
-       RowBox[{"Table", "[", 
-        RowBox[{
-         RowBox[{"Table", "[", 
-          RowBox[{
-           RowBox[{"Sphere", "[", 
-            RowBox[{
-             RowBox[{"{", 
-              RowBox[{"i", ",", 
-               RowBox[{"j", "+", "0.5"}], ",", 
-               RowBox[{"k", "+", "0.5"}]}], "}"}], ",", "r"}], "]"}], ",", 
-           RowBox[{"{", 
-            RowBox[{"i", ",", "0", ",", "n"}], "}"}]}], "]"}], ",", 
-         RowBox[{"{", 
-          RowBox[{"j", ",", "0", ",", 
-           RowBox[{"m", "-", "1"}]}], "}"}]}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"k", ",", "0", ",", 
-         RowBox[{"l", "-", "1"}]}], "}"}]}], "]"}], ",", 
-     RowBox[{"Table", "[", 
-      RowBox[{
-       RowBox[{"Table", "[", 
-        RowBox[{
-         RowBox[{"Table", "[", 
-          RowBox[{
-           RowBox[{"Sphere", "[", 
-            RowBox[{
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"i", "+", "0.5"}], ",", "j", ",", 
-               RowBox[{"k", "+", "0.5"}]}], "}"}], ",", "r"}], "]"}], ",", 
-           RowBox[{"{", 
-            RowBox[{"i", ",", "0", ",", 
-             RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}], ",", 
-         RowBox[{"{", 
-          RowBox[{"j", ",", "0", ",", "m"}], "}"}]}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"k", ",", "0", ",", 
-         RowBox[{"l", "-", "1"}]}], "}"}]}], "]"}]}], "]"}]}], ";"}], "\n", 
- RowBox[{
-  RowBox[{"ion1", "=", 
-   RowBox[{"Join", "[", 
-    RowBox[{
-     RowBox[{"Table", "[", 
-      RowBox[{
-       RowBox[{"Table", "[", 
-        RowBox[{
-         RowBox[{"Table", "[", 
-          RowBox[{
-           RowBox[{"Sphere", "[", 
-            RowBox[{
-             RowBox[{"{", 
-              RowBox[{"i", ",", "j", ",", "k"}], "}"}], ",", "r"}], "]"}], 
-           ",", 
-           RowBox[{"{", 
-            RowBox[{"i", ",", "0", ",", 
-             RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}], ",", 
-         RowBox[{"{", 
-          RowBox[{"j", ",", "0", ",", 
-           RowBox[{"m", "-", "1"}]}], "}"}]}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"k", ",", "0", ",", 
-         RowBox[{"l", "-", "1"}]}], "}"}]}], "]"}], ",", 
-     RowBox[{"Table", "[", 
-      RowBox[{
-       RowBox[{"Table", "[", 
-        RowBox[{
-         RowBox[{"Table", "[", 
-          RowBox[{
-           RowBox[{"Sphere", "[", 
-            RowBox[{
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"i", "+", 
-                RowBox[{"1", "/", "2"}]}], ",", 
-               RowBox[{"j", "+", 
-                RowBox[{"1", "/", "2"}]}], ",", "k"}], "}"}], ",", "r"}], 
-            "]"}], ",", 
-           RowBox[{"{", 
-            RowBox[{"i", ",", "0", ",", 
-             RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}], ",", 
-         RowBox[{"{", 
-          RowBox[{"j", ",", "0", ",", 
-           RowBox[{"m", "-", "1"}]}], "}"}]}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"k", ",", "0", ",", 
-         RowBox[{"l", "-", "1"}]}], "}"}]}], "]"}], ",", 
-     RowBox[{"Table", "[", 
-      RowBox[{
-       RowBox[{"Table", "[", 
-        RowBox[{
-         RowBox[{"Table", "[", 
-          RowBox[{
-           RowBox[{"Sphere", "[", 
-            RowBox[{
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"i", "+", 
-                RowBox[{"1", "/", "2"}]}], ",", "j", ",", 
-               RowBox[{"k", "+", 
-                RowBox[{"1", "/", "2"}]}]}], "}"}], ",", "r"}], "]"}], ",", 
-           RowBox[{"{", 
-            RowBox[{"i", ",", "0", ",", 
-             RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}], ",", 
-         RowBox[{"{", 
-          RowBox[{"j", ",", "0", ",", 
-           RowBox[{"m", "-", "1"}]}], "}"}]}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"k", ",", "0", ",", 
-         RowBox[{"l", "-", "1"}]}], "}"}]}], "]"}], ",", 
-     RowBox[{"Table", "[", 
-      RowBox[{
-       RowBox[{"Table", "[", 
-        RowBox[{
-         RowBox[{"Table", "[", 
-          RowBox[{
-           RowBox[{"Sphere", "[", 
-            RowBox[{
-             RowBox[{"{", 
-              RowBox[{"i", ",", 
-               RowBox[{"j", "+", 
-                RowBox[{"1", "/", "2"}]}], ",", 
-               RowBox[{"k", "+", 
-                RowBox[{"1", "/", "2"}]}]}], "}"}], ",", "r"}], "]"}], ",", 
-           RowBox[{"{", 
-            RowBox[{"i", ",", "0", ",", 
-             RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}], ",", 
-         RowBox[{"{", 
-          RowBox[{"j", ",", "0", ",", 
-           RowBox[{"m", "-", "1"}]}], "}"}]}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"k", ",", "0", ",", 
-         RowBox[{"l", "-", "1"}]}], "}"}]}], "]"}]}], "]"}]}], ";"}], "\n", 
- RowBox[{
-  RowBox[{"ion2", "=", 
-   RowBox[{"Join", "[", 
-    RowBox[{
-     RowBox[{"Table", "[", 
-      RowBox[{
-       RowBox[{"Table", "[", 
-        RowBox[{
-         RowBox[{"Table", "[", 
-          RowBox[{
-           RowBox[{"Sphere", "[", 
-            RowBox[{
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"i", "+", 
-                RowBox[{"1", "/", "2"}]}], ",", 
-               RowBox[{"j", "+", 
-                RowBox[{"1", "/", "2"}]}], ",", 
-               RowBox[{"k", "+", 
-                RowBox[{"1", "/", "2"}]}]}], "}"}], ",", "r"}], "]"}], ",", 
-           RowBox[{"{", 
-            RowBox[{"i", ",", "0", ",", 
-             RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}], ",", 
-         RowBox[{"{", 
-          RowBox[{"j", ",", "0", ",", 
-           RowBox[{"m", "-", "1"}]}], "}"}]}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"k", ",", "0", ",", 
-         RowBox[{"l", "-", "1"}]}], "}"}]}], "]"}], ",", 
-     RowBox[{"Table", "[", 
-      RowBox[{
-       RowBox[{"Table", "[", 
-        RowBox[{
-         RowBox[{"Table", "[", 
-          RowBox[{
-           RowBox[{"Sphere", "[", 
-            RowBox[{
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"i", "+", 
-                RowBox[{"1", "/", "2"}]}], ",", "j", ",", "k"}], "}"}], ",", 
-             "r"}], "]"}], ",", 
-           RowBox[{"{", 
-            RowBox[{"i", ",", "0", ",", 
-             RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}], ",", 
-         RowBox[{"{", 
-          RowBox[{"j", ",", "0", ",", 
-           RowBox[{"m", "-", "1"}]}], "}"}]}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"k", ",", "0", ",", 
-         RowBox[{"l", "-", "1"}]}], "}"}]}], "]"}], ",", 
-     RowBox[{"Table", "[", 
-      RowBox[{
-       RowBox[{"Table", "[", 
-        RowBox[{
-         RowBox[{"Table", "[", 
-          RowBox[{
-           RowBox[{"Sphere", "[", 
-            RowBox[{
-             RowBox[{"{", 
-              RowBox[{"i", ",", 
-               RowBox[{"j", "+", 
-                RowBox[{"1", "/", "2"}]}], ",", "k"}], "}"}], ",", "r"}], 
-            "]"}], ",", 
-           RowBox[{"{", 
-            RowBox[{"i", ",", "0", ",", 
-             RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}], ",", 
-         RowBox[{"{", 
-          RowBox[{"j", ",", "0", ",", 
-           RowBox[{"m", "-", "1"}]}], "}"}]}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"k", ",", "0", ",", 
-         RowBox[{"l", "-", "1"}]}], "}"}]}], "]"}], ",", 
-     RowBox[{"Table", "[", 
-      RowBox[{
-       RowBox[{"Table", "[", 
-        RowBox[{
-         RowBox[{"Table", "[", 
-          RowBox[{
-           RowBox[{"Sphere", "[", 
-            RowBox[{
-             RowBox[{"{", 
-              RowBox[{"i", ",", "j", ",", 
-               RowBox[{"k", "+", 
-                RowBox[{"1", "/", "2"}]}]}], "}"}], ",", "r"}], "]"}], ",", 
-           RowBox[{"{", 
-            RowBox[{"i", ",", "0", ",", 
-             RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}], ",", 
-         RowBox[{"{", 
-          RowBox[{"j", ",", "0", ",", 
-           RowBox[{"m", "-", "1"}]}], "}"}]}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"k", ",", "0", ",", 
-         RowBox[{"l", "-", "1"}]}], "}"}]}], "]"}]}], "]"}]}], ";"}], "\n", 
- RowBox[{"Graphics3D", "[", 
-  RowBox[{"{", 
-   RowBox[{"Red", ",", "lattice", ",", "body"}], "}"}], "]"}], "\n", 
- RowBox[{"Graphics3D", "[", 
-  RowBox[{"{", 
-   RowBox[{"Red", ",", "lattice", ",", "face"}], "}"}], "]"}], "\n", 
- RowBox[{"Graphics3D", "[", 
-  RowBox[{"{", 
-   RowBox[{"Red", ",", "ion1", ",", "Orange", ",", "ion2"}], "}"}], 
-  "]"}], "\n"}], "Input",
- CellChangeTimes->{{3.823812343856577*^9, 
-  3.823812343863174*^9}},ExpressionUUID->"09aa8c75-962c-4b28-8717-\
-5e7ed4f1fdaf"]
-},
-WindowSize->{808, 911},
-WindowMargins->{{Automatic, 312}, {228, Automatic}},
-FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
-StyleDefinitions->"Default.nb"
-]
-(* End of Notebook Content *)
-
-(* Internal cache information *)
-(*CellTagsOutline
-CellTagsIndex->{}
-*)
-(*CellTagsIndex
-CellTagsIndex->{}
-*)
-(*NotebookFileOutline
-Notebook[{
-Cell[558, 20, 10792, 315, 768, "Input",ExpressionUUID->"09aa8c75-962c-4b28-8717-5e7ed4f1fdaf"]
-}
-]
-*)
-
+r = 0.3;
+n = 3; m = 3; l = 3;
+lattice = 
+  Table[Table[Table[Sphere[{i, j, k}, r], {i, 0, n}], {j, 0, m}], {k, 
+    0, l}];
+body = Table[
+   Table[Table[
+     Sphere[{i + 0.5, j + 0.5, k + 0.5}, r], {i, 0, n - 1}], {j, 0, 
+     m - 1}], {k, 0, l - 1}];
+face = Join[
+   Table[Table[
+     Table[Sphere[{i + 0.5, j + 0.5, k}, r], {i, 0, n - 1}], {j, 0, 
+      m - 1}], {k, 0, l}], 
+   Table[Table[
+     Table[Sphere[{i, j + 0.5, k + 0.5}, r], {i, 0, n}], {j, 0, 
+      m - 1}], {k, 0, l - 1}], 
+   Table[Table[
+     Table[Sphere[{i + 0.5, j, k + 0.5}, r], {i, 0, n - 1}], {j, 0, 
+      m}], {k, 0, l - 1}]];
+ion1 = Join[
+   Table[Table[
+     Table[Sphere[{i, j, k}, r], {i, 0, n - 1}], {j, 0, m - 1}], {k, 
+     0, l - 1}], 
+   Table[Table[
+     Table[Sphere[{i + 1/2, j + 1/2, k}, r], {i, 0, n - 1}], {j, 0, 
+      m - 1}], {k, 0, l - 1}], 
+   Table[Table[
+     Table[Sphere[{i + 1/2, j, k + 1/2}, r], {i, 0, n - 1}], {j, 0, 
+      m - 1}], {k, 0, l - 1}], 
+   Table[Table[
+     Table[Sphere[{i, j + 1/2, k + 1/2}, r], {i, 0, n - 1}], {j, 0, 
+      m - 1}], {k, 0, l - 1}]];
+ion2 = Join[
+   Table[Table[
+     Table[Sphere[{i + 1/2, j + 1/2, k + 1/2}, r], {i, 0, n - 1}], {j,
+       0, m - 1}], {k, 0, l - 1}], 
+   Table[Table[
+     Table[Sphere[{i + 1/2, j, k}, r], {i, 0, n - 1}], {j, 0, 
+      m - 1}], {k, 0, l - 1}], 
+   Table[Table[
+     Table[Sphere[{i, j + 1/2, k}, r], {i, 0, n - 1}], {j, 0, 
+      m - 1}], {k, 0, l - 1}], 
+   Table[Table[
+     Table[Sphere[{i, j, k + 1/2}, r], {i, 0, n - 1}], {j, 0, 
+      m - 1}], {k, 0, l - 1}]];
+Graphics3D[{Red, lattice, body}]
+Graphics3D[{Red, lattice, face}]
+Graphics3D[{Red, ion1, Orange, ion2}]
