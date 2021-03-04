@@ -19,3 +19,10 @@ Small code snippets written mostly in C and Python for numerical computations an
 - Monte Carlo simulations
 - Random number generation
 - Statistics
+
+## Literature
+
+Press, W. H., Teukolsky, S. A., Vetterling, W. T. & Flannery, B. P. Numerical Recipes in C. The Art of Scientific Computing, 3rd ed. Cambridge University Press, 2007.
+Golub, G. H. & Van Loan, C. F. Matrix Computations. John Hopkins University Press, 1996.
+Cowan, G. Statistical Data Analysis. Oxford University Press, 1998.
+
