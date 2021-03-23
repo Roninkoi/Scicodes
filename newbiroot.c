@@ -10,8 +10,7 @@
 // derivative f'
 #define fp(x) (cos(3.0 * M_PI * (x) * (x) * (x)) / ((x) * (x) - 1.0) * \
 		(9.0 * M_PI * (x) * (x) - 6.0 * M_PI * (x) * (x) * (x) * (x) / \
-		 ((x) * (x) - 1.0)) / ((x) * (x) - 1.0)
-)
+		 ((x) * (x) - 1.0)) / ((x) * (x) - 1.0))
  
 // Bisection method tolerance
 #define BISECT_TOL 1.0e-7

@@ -12,6 +12,7 @@ Small code snippets written mostly in C and Python for numerical computations an
 
 - Root solving (Newton, Bisection)
 - Differentiation (Richardson)
+- Integration (Simpson, Gauss-Laguerre quadrature, Romberg)
 - Eigenvalue solving (Jacobi)
 - Interpolation, splines (cubic)
 - Matrix solving (Gauss-Seidel)
