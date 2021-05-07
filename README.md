@@ -14,10 +14,11 @@ Small code snippets written mostly in C and Python for numerical computations an
 - Differentiation (Richardson)
 - Integration (Simpson, Gauss-Laguerre quadrature, Romberg)
 - Eigenvalue solving (Jacobi)
+- Differential equation solving (Runge-Kutta RK4)
 - Interpolation, splines (cubic)
 - Matrix solving (Gauss-Seidel)
+- Minimization
 - Fitting
-- Monte Carlo simulations
 - Random number generation
 - Statistics
 

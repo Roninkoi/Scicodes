@@ -5,6 +5,9 @@ import scipy.stats as sps
 # histogram plot
 def hist(x, nbins, fpath=""):
     f = plt.figure(figsize=(10, 10))
+    plt.rcParams.update({'font.size': 22})
+    #colors = plt.cm.plasma(np.linspace(0, 1, len(a)))
+    #plt.rcParams['axes.prop_cycle'] = plt.cycler(color=colors)
 
     # generate (normalized) histogram of data x
     plt.hist(x, nbins, ec="tab:blue", label="Random data", density=True)
@@ -19,10 +22,8 @@ def hist(x, nbins, fpath=""):
     plt.title("Histogram")
     plt.xlabel("$x$")
     plt.ylabel("$N$")
-    plt.rcParams.update({'font.size': 22})
-
+    
     plt.grid(True)
-
     plt.legend(fontsize='xx-small')
 
     if (len(fpath) > 0):

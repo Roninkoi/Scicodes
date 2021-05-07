@@ -1,6 +1,0 @@
-(* Time-dependent Poiseuille flow *)
-u[r_, t_] = (1/4)*(1 - r^2) - 2*Sum[1/(BesselJZero[0, n])^3*(
-       BesselJ[0, BesselJZero[0, n]*r]/BesselJ[1, BesselJZero[0, n]]
-       )*Exp[-BesselJZero[0, n]^2*t], {n, 1, 100 (* Infinity *)}];
-poit = ContourPlot[u[x, y], {x, 0, 1}, {y, 0, 1}, 
-  FrameLabel -> {"r (m)", "t (s)"}, PlotLegends -> Automatic]
